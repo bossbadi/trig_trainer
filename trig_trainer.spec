@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['trig_trainer.py'],
-             pathex=['C:\\Users\\andy\\Desktop\\trig_trainer'],
+             pathex=['C:\\Users\\andy\\Documents\\GitHub\\trig_trainer'],
              binaries=[],
              datas=[],
              hiddenimports=[],

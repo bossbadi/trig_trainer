@@ -1,5 +1,5 @@
-import random
-import requests
+from random import choice
+from requests import get
 
 PROBLEMS = """
 sin(0 deg)
@@ -345,7 +345,6 @@ cot(-7pi/4)
 cot(-11pi/6)
 """
 
-FILENAME = 'problems.txt'
 API = 'https://api.mathjs.org/v4/?expr={}'
 WELCOME = """
 Welcome to Trig Trainer by bossbadi
@@ -356,8 +355,8 @@ Enter "quit" to quit"""
 
 def check_answer(problem, answer):
     try:
-        actual = requests.get(API.format(problem))
-        answer = requests.get(API.format(answer))
+        actual = get(API.format(problem))
+        answer = get(API.format(answer))
         actual = round(float(actual.text), 2)
         answer = round(float(answer.text), 2)
 
@@ -375,7 +374,7 @@ print(WELCOME)
 
 while True:
     print()
-    problem = random.choice(problems)
+    problem = choice(problems)
     answer = input(problem + ' = ')
 
     if answer == 'quit':
